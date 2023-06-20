@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { animations } from "../config/framer";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Icons } from "./icons";
 
@@ -9,10 +9,10 @@ export const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <header>
-      <div className="fixed top-0 left-0 flex">
+    <header className="fixed z-10">
+      <div className="text-darkGrey top-0 left-0 flex">
         <div className="flex flex-col">
-          <div className="bg-white px-[20px] py-[10px] items-center flex justify-between w-[210px]">
+          <div className="bg-white px-[20px] py-[5px] items-center flex justify-between w-[210px] md:w-[300px]">
             <Link to="/">
               <span className="text-[24px]">ruwpy</span>
             </Link>
@@ -54,7 +54,7 @@ export const Navbar = () => {
           <m.div
             variants={animations.nav}
             animate={navOpen ? "animate" : "initial"}
-            className="bg-white w-[210px] px-[20px] overflow-hidden flex flex-col justify-between"
+            className="bg-white  px-[20px] overflow-hidden flex flex-col justify-between"
           >
             {navOpen && (
               <>
@@ -82,7 +82,7 @@ export const Navbar = () => {
             )}
           </m.div>
         </div>
-        <span className="text-white text-[20px] ml-[35px] mt-[15px]">welcome</span>
+        <span className="text-white text-[20px] ml-[35px] mt-[9px]">welcome</span>
       </div>
     </header>
   );
