@@ -1,4 +1,4 @@
-import { Variants, color } from "framer-motion";
+import { Variants } from "framer-motion";
 
 const burgerAnimation: Variants = {
   initial: (custom) => ({
