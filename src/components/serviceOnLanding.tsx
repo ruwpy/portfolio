@@ -1,6 +1,6 @@
 import { IService } from "../types";
 import { useState } from "react";
-import { AnimatePresence, color, motion as m } from "framer-motion";
+import { AnimatePresence, motion as m } from "framer-motion";
 import { animations } from "../config/framer";
 import { useMouseStore } from "../store/mouseStore";
 
