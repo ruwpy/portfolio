@@ -6,6 +6,12 @@ body {
   font-family: "Josefin Sans", sans-serif;
   color: white;
   overscroll-behavior-y: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .ss-page {

@@ -6,3 +6,9 @@ export interface IProject {
   whatBuilt: string;
   isDeployed: boolean;
 }
+
+export interface IService {
+  id: number;
+  title: string;
+  desc: string;
+}

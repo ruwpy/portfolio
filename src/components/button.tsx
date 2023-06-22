@@ -5,8 +5,8 @@ import { useMouseStore } from "../store/mouseStore";
 const button = cva("bg-white text-darkGrey px-[20px] py-[10px]", {
   variants: {
     size: {
-      small: "text-[16px] md:text-[18px]",
-      medium: "text-[18px] md:text-[22px]",
+      small: "text-[16px] md:text-[18px] xl:text-[20px]",
+      medium: "text-[18px] md:text-[22px] xl:text-[24px]",
     },
   },
   defaultVariants: {
