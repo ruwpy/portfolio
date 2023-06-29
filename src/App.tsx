@@ -8,7 +8,7 @@ import { NotFound } from "./pages/notFound";
 function App() {
   const location = useLocation();
   return (
-    <div className="bg-darkGrey">
+    <>
       <Navbar />
       <AnimatePresence initial={false}>
         <Routes location={location} key={location.pathname}>
@@ -17,7 +17,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
-    </div>
+    </>
   );
 }
 

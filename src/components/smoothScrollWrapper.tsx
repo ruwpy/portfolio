@@ -45,7 +45,7 @@ export const SmoothScrollWrapper = ({ children }: { children: React.ReactNode })
       animate={{ opacity: 1, transition: { delay: 0.5 } }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       ref={refSmoothWrapper}
-      className="smooth-wrapper fixed top-0 left-0 w-full h-full overflow-hidden bg-darkGrey"
+      className="smooth-wrapper fixed top-0 left-0 w-full h-full overflow-hidden"
     >
       <AnimatePresence>
         <div ref={refSmoothContent} className="smooth-content">
