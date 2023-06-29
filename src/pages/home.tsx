@@ -7,12 +7,17 @@ import { ProjectOnLanding } from "../components/projectOnLanding";
 import { AnimateText } from "../components/animateText";
 import { ServiceOnLanding } from "../components/serviceOnLanding";
 import { SmoothScrollWrapper } from "../components/smoothScrollWrapper";
+import { useEffect } from "react";
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <SmoothScrollWrapper>
       <Container>
-        <div className="h-[100dvh] flex flex-col pb-[10px] justify-end">
+        <div className="h-[100svh] flex flex-col pb-[10px] justify-end">
           <AnimateText
             htmlTag="span"
             viewport={{ once: true }}
@@ -97,14 +102,17 @@ export const Home = () => {
         <div className="flex justify-center">
           <AnimateText
             htmlTag="p"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.6 }}
             className="text-[36px] gap-x-[12px] justify-center md:text-[48px] py-[100px] md:py-[200px] md:px-[50px] text-center max-w-[1280px] leading-[40px] md:leading-[48px]"
           >
             I take every opportunity to explore new perspectives, projects, and
             collaborations. if you've got something, send me a message.
           </AnimateText>
         </div>
-        <div className="flex flex-col md:flex-row gap-[30px] md:gap-[50px] lg:gap-[100px] border-t border-white/20 py-[50px] md:py-[80px] justify-center">
+        <div
+          id="contact"
+          className="flex flex-col md:flex-row gap-[30px] md:gap-[50px] lg:gap-[100px] border-t border-white/20 py-[50px] md:py-[80px] justify-center"
+        >
           <span className="flex flex-col">
             <span className="text-[18px] md:text-[24px] leading-[18px] md:leading-[24px] text-white/50">
               discord

@@ -56,3 +56,24 @@ export const services: IService[] = [
     desc: "based on project requirements, size and stage I can provide back-end and infrastructure support as well as getting the right resources to team up with.",
   },
 ];
+
+export const frontendTechnologies: string[] = [
+  "html",
+  "css/sass",
+  "javascript",
+  "typescript",
+  "react",
+  "solid.js",
+  "next.js",
+  "tailwindcss",
+  "framer motion",
+];
+export const backendTechnologies: string[] = [
+  "node",
+  "express.js",
+  "nest.js",
+  "next.js",
+  "prisma",
+  "postgres",
+  "mongodb",
+];

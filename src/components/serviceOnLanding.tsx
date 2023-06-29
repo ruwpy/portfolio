@@ -13,7 +13,7 @@ export const ServiceOnLanding = ({ service }: { service: IService }) => {
     <div
       onMouseOver={() => setOverButton(true)}
       onMouseLeave={() => setOverButton(false)}
-      className="relative cursor-pointer"
+      className="relative"
     >
       <m.div
         animate={serviceHovered ? "animate" : "initial"}
