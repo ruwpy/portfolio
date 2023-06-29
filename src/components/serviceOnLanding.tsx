@@ -1,7 +1,7 @@
 import { IService } from "../types";
 import { useState } from "react";
 import { AnimatePresence, motion as m } from "framer-motion";
-import { animations } from "../config/framer";
+import { animations } from "../config/animations";
 import { useMouseStore } from "../store/mouseStore";
 
 export const ServiceOnLanding = ({ service }: { service: IService }) => {

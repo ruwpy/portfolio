@@ -36,6 +36,7 @@ const serviceBgAnimation: Variants = {
   },
   animate: {
     top: "1px",
+    transition: { duration: 0.4, ease: [0.07, 0.19, 0, 0.99] },
   },
 };
 
@@ -49,6 +50,27 @@ const serviceDescAnimation: Variants = {
   animate: { color: "rgb(255 255 255 / 0.5)", transition: { duration: 0.1 } },
 };
 
+const pageTransitionAnimation: Variants = {
+  initial: { opacity: 1 },
+  exit: { opacity: 0, transition: { duration: 0.35 } },
+};
+
+const pageTitleAnimation: Variants = {
+  initial: {
+    y: "-120%",
+    transition: { duration: 0.4, ease: [0.07, 0.19, 0, 0.99] },
+  },
+  animate: {
+    y: 0,
+    transition: { duration: 0.4, ease: [0.07, 0.19, 0, 0.99] },
+  },
+};
+
+const introAnimation: Variants = {
+  initial: { opacity: 1 },
+  exit: { opacity: 0, transition: { duration: 1 } },
+};
+
 export const animations = {
   burger: burgerAnimation,
   nav: navAnimation,
@@ -56,4 +78,7 @@ export const animations = {
   serviceBg: serviceBgAnimation,
   serviceDesc: serviceDescAnimation,
   serviceTitle: serviceTitleAnimation,
+  pageTransition: pageTransitionAnimation,
+  pageTitle: pageTitleAnimation,
+  intro: introAnimation,
 };
