@@ -3,9 +3,10 @@ import { IProject } from "../types";
 import { useMouseStore } from "../store/mouseStore";
 import { AnimateText } from "./animateText";
 import { motion as m } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const ProjectOnLanding = ({ project }: { project: IProject }) => {
-  const { description, image, isDeployed, name, whatBuilt, id } = project;
+  const { description, link, image, isDeployed, name, whatBuilt, id } = project;
   const [projectHovered, setProjectHovered] = useState(false);
   const isEven = id % 2 === 0;
   const { setOverButton } = useMouseStore();
@@ -26,36 +27,49 @@ export const ProjectOnLanding = ({ project }: { project: IProject }) => {
             setOverButton(false);
             setProjectHovered(false);
           }}
-          className={`aspect-[4/5] w-full cursor-pointer overflow-hidden md:max-w-[350px] ${
+          className={`aspect-[4/5] relative w-full cursor-pointer overflow-hidden md:max-w-[350px] ${
             isEven ? "md:order-2" : "md:order-1"
           }`}
         >
-          <m.img
-            animate={{
-              scale: projectHovered ? 1.15 : 1,
-              transition: { stiffness: 500, ease: [0.07, 0.19, 0, 0.99] },
-            }}
-            className="bg-white h-full object-cover origin-center w-full"
-            src={image}
-            alt="project image"
-          />
-          {!isDeployed && <div></div>}
+          <Link to={isDeployed ? link! : ""} target={isDeployed ? "_blank" : ""}>
+            <m.img
+              animate={{
+                scale: projectHovered ? 1.15 : 1,
+                transition: { stiffness: 500, ease: [0.07, 0.19, 0, 0.99] },
+              }}
+              className="bg-white h-full object-cover origin-center w-full"
+              src={image}
+              alt="project image"
+            />
+          </Link>
+          {!isDeployed && (
+            <div>
+              <div className="bg-yellow-300 text-darkGrey py-[2px] absolute bottom-[80px] left-[-10px] rotate-[6deg] whitespace-nowrap">
+                not deployed yet - not deployed yet - not deployed yet - not deployed yet
+              </div>
+              <div className="bg-yellow-300 text-darkGrey py-[2px] absolute bottom-[20px] left-[-50px] rotate-[-2deg] whitespace-nowrap">
+                not deployed yet - not deployed yet - not deployed yet - not deployed yet
+              </div>
+            </div>
+          )}
         </div>
         <div className={`mt-[20px] ${isEven ? "md:order-1" : "md:order-2"}`}>
           <span className="flex flex-col">
-            <span
-              onMouseOver={() => {
-                setOverButton(true);
-                setProjectHovered(true);
-              }}
-              onMouseLeave={() => {
-                setOverButton(false);
-                setProjectHovered(false);
-              }}
-              className="text-[36px] leading-[36px] cursor-pointer font-semibold"
-            >
-              {name}
-            </span>
+            <Link to={isDeployed ? link! : ""} target={isDeployed ? "_blank" : ""}>
+              <span
+                onMouseOver={() => {
+                  setOverButton(true);
+                  setProjectHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setOverButton(false);
+                  setProjectHovered(false);
+                }}
+                className="text-[36px] leading-[36px] cursor-pointer font-semibold"
+              >
+                {name}
+              </span>
+            </Link>
             <span className="text-[16px] text-white/30">{whatBuilt}</span>
           </span>
           <AnimateText

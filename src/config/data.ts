@@ -19,6 +19,7 @@ export const projects: IProject[] = [
     description:
       "streamlined messaging for effortless connection. Instant chat, sleek interface, and a seamless user experience. stay connected, expand your network, and communicate with ease.",
     whatBuilt: "design, development",
+    link: "https://fuwy.vercel.app",
     isDeployed: true,
   },
   {
@@ -29,7 +30,7 @@ export const projects: IProject[] = [
     description:
       "unleash your inner chef. discover, create, and share recipes. connect with a vibrant community of food enthusiasts. explore flavors, exchange cooking tips, and elevate your culinary skills.",
     whatBuilt: "design, fullstack development",
-    isDeployed: true,
+    isDeployed: false,
   },
 ];
 

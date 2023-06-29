@@ -3,6 +3,7 @@ export interface IProject {
   name: string;
   image: string;
   description: string;
+  link?: string;
   whatBuilt: string;
   isDeployed: boolean;
 }
