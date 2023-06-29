@@ -1,19 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/navbar";
 import { Home } from "./pages/home";
-import { Cursor } from "./components/cursor";
+import { AnimatePresence } from "framer-motion";
+import { About } from "./pages/about";
+import { NotFound } from "./pages/notFound";
 
 function App() {
+  const location = useLocation();
   return (
-    <Router>
-      <Cursor />
+    <div className="bg-darkGrey">
       <Navbar />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route />
-        <Route />
-      </Routes>
-    </Router>
+      <AnimatePresence initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
+    </div>
   );
 }
 

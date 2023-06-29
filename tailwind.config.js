@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         'darkGrey': '#171717'
+      },
+      transitionProperty: {
+        size: 'width, height'
       }
     },
   },

@@ -1,15 +1,31 @@
 import { useState } from "react";
-import { animations } from "../config/framer";
+import { animations } from "../config/animations";
 import { AnimatePresence, motion as m } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Icons } from "./icons";
 import { useMouseStore } from "../store/mouseStore";
 import { AnimateText } from "./animateText";
+import { useEffect } from "react";
 
 export const Navbar = () => {
   const [navHovered, setNavHovered] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const { setOverButton } = useMouseStore();
+  const location = useLocation();
+  let pageTitle: string = "";
+
+  useEffect(() => {
+    setNavOpen(false);
+  }, [location.pathname]);
+
+  if (location.pathname === "/") {
+    pageTitle = "home";
+  } else if (location.pathname === "/about") {
+    pageTitle = "about";
+  }
+  // else if (location.pathname === "/projects") {
+  //   pageTitle = "projects";
+  // }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-10">
@@ -72,21 +88,30 @@ export const Navbar = () => {
                   <ul className="flex flex-col text-[20px] gap-[5px] mt-[30px]">
                     <li className="inline-block list-none">
                       <Link to="/">
-                        <AnimateText delayNum={3} htmlTag="span">
+                        <AnimateText
+                          whileHover={{
+                            x: 5,
+                            transition: { type: "tween", duration: 0.2 },
+                          }}
+                          exit="initial"
+                          delayNum={3}
+                          htmlTag="span"
+                        >
                           home
                         </AnimateText>
                       </Link>
                     </li>
                     <li className="inline-block list-none">
-                      <Link to="projects">
-                        <AnimateText delayNum={6} htmlTag="span">
-                          projects
-                        </AnimateText>
-                      </Link>
-                    </li>
-                    <li className="inline-block list-none">
                       <Link to="/about">
-                        <AnimateText delayNum={9} htmlTag="span">
+                        <AnimateText
+                          whileHover={{
+                            x: 5,
+                            transition: { type: "tween", duration: 0.2 },
+                          }}
+                          exit="initial"
+                          delayNum={9}
+                          htmlTag="span"
+                        >
                           about
                         </AnimateText>
                       </Link>
@@ -106,9 +131,18 @@ export const Navbar = () => {
             </AnimatePresence>
           </m.div>
         </div>
-        <span className="text-white text-[20px] flex-grow text-center md:flex-grow-0 md:ml-[35px] mt-[9px]">
-          welcome
-        </span>
+        <AnimatePresence mode="wait">
+          <m.span
+            key={pageTitle}
+            initial="initial"
+            animate="animate"
+            exit="initial"
+            variants={animations.pageTitle}
+            className="text-white h-fit text-[20px] flex-grow text-center md:flex-grow-0 md:ml-[35px] mt-[9px]"
+          >
+            {pageTitle}
+          </m.span>
+        </AnimatePresence>
       </div>
     </header>
   );

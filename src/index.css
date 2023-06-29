@@ -7,18 +7,11 @@ body {
   color: white;
   overscroll-behavior-y: none;
   -ms-overflow-style: none;
+  -webkit-tap-highlight-color: transparent;
   scrollbar-width: none;
+  scroll-behavior: auto;
 }
 
 body::-webkit-scrollbar {
   display: none;
-}
-
-.ss-page {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }

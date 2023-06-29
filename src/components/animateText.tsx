@@ -1,4 +1,4 @@
-import { animations } from "../config/framer";
+import { animations } from "../config/animations";
 import { motion as m, MotionProps } from "framer-motion";
 import { cn } from "../lib/utils";
 
@@ -22,7 +22,6 @@ export const AnimateText = ({
     <m.p
       whileInView="animate"
       initial="initial"
-      exit="initial"
       className={cn(className, "inline-flex flex-wrap")}
       {...props}
     >
@@ -42,7 +41,6 @@ export const AnimateText = ({
     <m.span
       whileInView="animate"
       initial="initial"
-      exit="initial"
       className={cn(className, "inline-flex flex-wrap")}
       {...props}
     >
