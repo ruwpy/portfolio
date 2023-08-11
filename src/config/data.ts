@@ -3,24 +3,24 @@ import { IProject, IService } from "../types";
 export const projects: IProject[] = [
   {
     id: 1,
-    name: "orin",
+    name: "astrellum",
     image:
-      "https://images.unsplash.com/photo-1587614382231-d1590f0039e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "https://images.unsplash.com/photo-1571898223382-0aa3499f0f2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80  ",
     description:
-      "streamlined messaging for effortless connection. Instant chat, sleek interface, and a seamless user experience. stay connected, expand your network, and communicate with ease.",
-    whatBuilt: "design, fullstack development",
+      "application designed to search for collaborators for your project with no effort. add your project, specify the skills required for it and wait for responses",
+    whatBuilt: "design, development",
+    link: "https://fuwy.vercel.app",
     isDeployed: false,
   },
   {
     id: 2,
-    name: "fuwy",
-    image:
-      "https://images.unsplash.com/photo-1571898223382-0aa3499f0f2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80  ",
+    name: "null-auth",
+    image: "https://s3.timeweb.com/2e7781a6-recipeer/nullauthpreview.jpg",
     description:
-      "streamlined messaging for effortless connection. Instant chat, sleek interface, and a seamless user experience. stay connected, expand your network, and communicate with ease.",
-    whatBuilt: "design, development",
-    link: "https://fuwy.vercel.app",
+      "null-auth is a secure offline-first 2fa desktop application. import your 2fa qr codes from any application or directly from google authenticator",
+    whatBuilt: "fullstack development",
     isDeployed: true,
+    link: "https://github.com/ruwpy/null-auth",
   },
   {
     id: 3,
@@ -30,7 +30,8 @@ export const projects: IProject[] = [
     description:
       "unleash your inner chef. discover, create, and share recipes. connect with a vibrant community of food enthusiasts. explore flavors, exchange cooking tips, and elevate your culinary skills.",
     whatBuilt: "design, fullstack development",
-    isDeployed: false,
+    isDeployed: true,
+    link: "https://recipeer.vercel.app",
   },
 ];
 
@@ -63,17 +64,14 @@ export const frontendTechnologies: string[] = [
   "javascript",
   "typescript",
   "react",
-  "solid.js",
   "next.js",
   "tailwindcss",
   "framer motion",
 ];
 export const backendTechnologies: string[] = [
   "node",
+  "rust",
   "express.js",
-  "nest.js",
-  "next.js",
-  "prisma",
   "postgres",
   "mongodb",
 ];

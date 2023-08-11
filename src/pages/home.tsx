@@ -59,7 +59,7 @@ export const Home = () => {
               viewport={{ once: true, margin: "-100px" }}
               className="inline-block text-[48px] gap-x-[12px] w-[200px] leading-[52px] font-semibold"
             >
-              I will create a website your users will fall in love with
+              I will create an interface your users will fall in love with
             </AnimateText>
             <div className="flex flex-col gap-[30px] md:mt-[100px]">
               <AnimateText
