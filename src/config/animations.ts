@@ -58,11 +58,11 @@ const pageTransitionAnimation: Variants = {
 const pageTitleAnimation: Variants = {
   initial: {
     y: "-120%",
-    transition: { duration: 0.4, ease: [0.07, 0.19, 0, 0.99] },
+    transition: { duration: 0.4, ease: [0.75, 0.5, 0, 1] },
   },
   animate: {
     y: 0,
-    transition: { duration: 0.4, ease: [0.07, 0.19, 0, 0.99] },
+    transition: { duration: 0.4, ease: [0.75, 0.5, 0, 1] },
   },
 };
 
