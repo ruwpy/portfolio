@@ -17,8 +17,12 @@ export const About = () => {
   return (
     <SmoothScrollWrapper>
       <Container>
-        <div className="flex flex-col lg:flex-row max-w-[500px] lg:gap-[100px] lg:max-w-none mx-auto lg:items-center mt-[200px] lg:h-[100svh] lg:mt-0">
-          <div className={`flex flex-col ${size.width >= 1024 ? "order-2" : "order-1"}`}>
+        <div className="flex flex-col lg:flex-row max-w-[500px] lg:gap-[100px] lg:max-w-[1000px] mx-auto lg:items-center mt-[200px] lg:h-[100svh] lg:mt-0">
+          <div
+            className={`flex flex-col max-w-[550px] ${
+              size.width >= 1024 ? "order-2" : "order-1"
+            }`}
+          >
             <div className="relative w-full">
               <h1 className="text-[40px]">hi there!</h1>
             </div>
