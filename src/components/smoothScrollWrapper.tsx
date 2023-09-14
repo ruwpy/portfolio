@@ -16,9 +16,7 @@ export const SmoothScrollWrapper = ({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     if (refSmoothContent.current && size.width >= 1024)
-      document.body.style.height = `${
-        refSmoothContent.current.getBoundingClientRect().height
-      }px`;
+      document.body.style.height = `${refSmoothContent.current.clientHeight}px`;
   }, [size.height]);
 
   useEffect(() => {

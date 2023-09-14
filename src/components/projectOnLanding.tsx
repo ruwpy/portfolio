@@ -4,6 +4,7 @@ import { useMouseStore } from "../store/mouseStore";
 import { AnimateText } from "./animateText";
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Icons } from "./icons";
 
 export const ProjectOnLanding = ({ project }: { project: IProject }) => {
   const { description, link, image, isDeployed, name, whatBuilt, id } = project;
@@ -32,15 +33,21 @@ export const ProjectOnLanding = ({ project }: { project: IProject }) => {
           }`}
         >
           <Link to={isDeployed ? link! : ""} target={isDeployed ? "_blank" : ""}>
-            <m.img
-              animate={{
-                scale: projectHovered ? 1.15 : 1,
-                transition: { stiffness: 500, ease: [0.07, 0.19, 0, 0.99] },
-              }}
-              className="bg-white h-full object-cover origin-center w-full"
-              src={image}
-              alt="project image"
-            />
+            {image ? (
+              <m.img
+                animate={{
+                  scale: projectHovered ? 1.15 : 1,
+                  transition: { stiffness: 500, ease: [0.07, 0.19, 0, 0.99] },
+                }}
+                className="bg-white h-full object-cover origin-center w-full"
+                src={image}
+                alt="project image"
+              />
+            ) : (
+              <div className="bg-[#282828] h-full w-full flex justify-center items-center">
+                <Icons.noImage className="opacity-50 w-[55px] h-[55px]" />
+              </div>
+            )}
           </Link>
           {!isDeployed && (
             <div>

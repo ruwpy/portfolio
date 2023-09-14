@@ -3,17 +3,22 @@ import { IProject, IService } from "../types";
 export const projects: IProject[] = [
   {
     id: 1,
-    name: "astrellum",
-    image:
-      "https://images.unsplash.com/photo-1571898223382-0aa3499f0f2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80  ",
+    name: "streamwdgts",
     description:
-      "application designed to search for collaborators for your project with no effort. add your project, specify the skills required for it and wait for responses",
-    whatBuilt: "design, development",
-    link: "https://fuwy.vercel.app",
+      "service that helps streamers enhance their stream by creating custom widgets. service has its own code editor that brings better developer experience",
+    whatBuilt: "development, design",
     isDeployed: false,
   },
   {
     id: 2,
+    name: "uling",
+    description:
+      "uling is a chrome translator extension designed for easy and quick access on any webpage. the translator uses DeepL© api under the hood ",
+    whatBuilt: "fullstack development",
+    isDeployed: false,
+  },
+  {
+    id: 3,
     name: "null-auth",
     image: "https://s3.timeweb.com/2e7781a6-recipeer/nullauthpreview.jpg",
     description:
@@ -21,17 +26,6 @@ export const projects: IProject[] = [
     whatBuilt: "fullstack development",
     isDeployed: true,
     link: "https://github.com/ruwpy/null-auth",
-  },
-  {
-    id: 3,
-    name: "recipeer",
-    image:
-      "https://images.unsplash.com/photo-1615817198611-3a444017a48f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
-    description:
-      "unleash your inner chef. discover, create, and share recipes. connect with a vibrant community of food enthusiasts. explore flavors, exchange cooking tips, and elevate your culinary skills.",
-    whatBuilt: "design, fullstack development",
-    isDeployed: true,
-    link: "https://recipeer.vercel.app",
   },
 ];
 

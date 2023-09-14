@@ -1,7 +1,7 @@
 export interface IProject {
   id: number;
   name: string;
-  image: string;
+  image?: string;
   description: string;
   link?: string;
   whatBuilt: string;
